@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeStudent } from "../studentSlice";
 
 export const StudentList = () => {
-  const students = useSelector((state) => state.students.roster);
+  const students = useSelector((state) => state.classroom.students);
   const dispatch = useDispatch();
 
   const handleDeleteStudent = (id) => {

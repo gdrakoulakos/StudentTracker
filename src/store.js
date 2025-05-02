@@ -3,6 +3,6 @@ import studentReducer from "./studentSlice";
 
 export const store = configureStore({
   reducer: {
-    students: studentReducer,
+    classroom: studentReducer,
   },
 });

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  roster: [
+    students: [
     { id: 1, fullName: "George Drakoulakos" },
     { id: 2, fullName: "John Smith" },
   ],
@@ -13,13 +13,13 @@ const studentSlice = createSlice({
   reducers: {
     addStudent: (state, action) => {
       const newStudent = {
-        id: state.roster[state.roster.length - 1] + 1,
+        id: state.students[state.students.length - 1] + 1,
         fullName: action.payload,
       };
-      state.roster.push(newStudent);
+      state.students.push(newStudent);
     },
     removeStudent: (state, action) => {
-      state.roster = state.roster.filter(
+      state.students = state.students.filter(
         (student) => student.id !== action.payload
       );
     },
