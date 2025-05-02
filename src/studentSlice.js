@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  students: [],
+  roster: [
+    { id: 1, fullName: "George Drakoulakos" },
+    { id: 2, fullName: "John Smith" },
+  ],
 };
 
 const studentSlice = createSlice({
@@ -9,7 +12,7 @@ const studentSlice = createSlice({
   initialState,
   reducers: {
     addStudent: (state, action) => {
-      state.students.push(action.payload);
+      state.roster.push(action.payload);
     },
     removeStudent: (state, action) => {},
   },
