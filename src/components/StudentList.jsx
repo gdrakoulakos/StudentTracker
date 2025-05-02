@@ -13,8 +13,8 @@ export const StudentList = () => {
     <div>
       <h2>Student List</h2>
       {students.map((student) => (
-        <div key={student.id}>
-          {student.fullName}
+        <div key={student.id} style={{display:"flex", marginTop: "5px"}}>
+          <div style={{width: "200px"}}>{student.fullName}</div>
           <button onClick={() => handleDeleteStudent(student.id)}>
             Delete Student
           </button>

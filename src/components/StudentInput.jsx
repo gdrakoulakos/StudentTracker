@@ -14,8 +14,10 @@ export const StudentInput = () => {
 
   return (
     <div>
+        <h2>New Student</h2>
+        
       <input onChange={(event) => setNewStudent(event.target.value)} />{" "}
-      <button onClick={handleAddStudent}>Add Student</button>
+      <button style={{marginLeft:"25px"}} onClick={handleAddStudent}>Add Student</button>
     </div>
   );
 };
