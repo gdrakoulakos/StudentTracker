@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    students: [
+  students: [
     { id: 1, fullName: "George Drakoulakos" },
     { id: 2, fullName: "John Smith" },
   ],
@@ -12,8 +12,10 @@ const studentSlice = createSlice({
   initialState,
   reducers: {
     addStudent: (state, action) => {
+      const lastStudent = state.students[state.students.length - 1];
+      const newId = lastStudent ? lastStudent.id + 1 : 1;
       const newStudent = {
-        id: state.students[state.students.length - 1] + 1,
+        id: newId,
         fullName: action.payload,
       };
       state.students.push(newStudent);
