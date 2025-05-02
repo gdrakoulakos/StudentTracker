@@ -18,7 +18,11 @@ const studentSlice = createSlice({
       };
       state.roster.push(newStudent);
     },
-    removeStudent: (state, action) => {},
+    removeStudent: (state, action) => {
+      state.roster = state.roster.filter(
+        (student) => student.id !== action.payload
+      );
+    },
   },
 });
 
