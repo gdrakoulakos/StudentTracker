@@ -12,7 +12,11 @@ const studentSlice = createSlice({
   initialState,
   reducers: {
     addStudent: (state, action) => {
-      state.roster.push(action.payload);
+      const newStudent = {
+        id: state.roster[state.roster.length - 1] + 1,
+        fullName: action.payload,
+      };
+      state.roster.push(newStudent);
     },
     removeStudent: (state, action) => {},
   },
