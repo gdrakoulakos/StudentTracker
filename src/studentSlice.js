@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   students: [
-    { id: 1, fullName: "George Drakoulakos" },
-    { id: 2, fullName: "John Smith" },
+    { id: 1, fullName: "George Drakoulakos", grade: 17 },
+    { id: 2, fullName: "John Smith", grade: 19 },
+    { id: 3, fullName: "Mike Ford", grade: 16 },
   ],
 };
 
@@ -16,7 +17,8 @@ const studentSlice = createSlice({
       const newId = lastStudent ? lastStudent.id + 1 : 1;
       const newStudent = {
         id: newId,
-        fullName: action.payload,
+        fullName: action.payload.fullName,
+        grade: action.payload.grade,
       };
       state.students.push(newStudent);
     },
