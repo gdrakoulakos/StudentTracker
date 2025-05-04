@@ -5,6 +5,8 @@ const initialState = {
     { id: 1, fullName: "George Drakoulakos", grade: 17 },
     { id: 2, fullName: "John Smith", grade: 19 },
     { id: 3, fullName: "Mike Ford", grade: 16 },
+    { id: 4, fullName: "Alex Erikson", grade: 8 },
+    { id: 5, fullName: "Ludovic Einaudi", grade: 12 },
   ],
 };
 

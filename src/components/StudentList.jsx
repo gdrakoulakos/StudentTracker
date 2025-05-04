@@ -24,7 +24,10 @@ export const StudentList = () => {
         <h4 style={{ width: "200px" }}>Name</h4> <h4>Grade</h4>
       </div>
       {students.map((student) => (
-        <div key={student.id} style={{ display: "flex", marginTop: "5px" }}>
+        <div
+          key={student.id}
+          style={{ display: "flex", marginTop: "5px", height: "40px" }}
+        >
           <div style={{ width: "200px" }}>{student.fullName}</div>
           <button onClick={() => handleDecreaseGrade(student.id)}>-</button>
           <div
@@ -37,8 +40,17 @@ export const StudentList = () => {
             {student.grade}
           </div>
           <button onClick={() => handleIncreaseGrade(student.id)}>+</button>
+          <div
+            style={{
+              width: "70px",
+              textAlign: "center",
+              alignContent: "center",
+            }}
+          >
+            {student.grade > 10 ? "Passed" : "Failed"}
+          </div>
           <button
-            style={{ marginLeft: "35px" }}
+            style={{ marginLeft: "30px" }}
             onClick={() => handleDeleteStudent(student.id)}
           >
             Delete Student
