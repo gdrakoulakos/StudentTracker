@@ -27,8 +27,25 @@ const studentSlice = createSlice({
         (student) => student.id !== action.payload
       );
     },
+    increaseGrade: (state, action) => {
+      const student = state.students.find(
+        (student) => student.id === action.payload
+      );
+      if (student) {
+        student.grade += 1;
+      }
+    },
+    decreaseGrade: (state, action) => {
+      const student = state.students.find(
+        (student) => student.id === action.payload
+      );
+      if (student) {
+        student.grade -= 1;
+      }
+    },
   },
 });
 
-export const { addStudent, removeStudent } = studentSlice.actions;
+export const { addStudent, removeStudent, increaseGrade, decreaseGrade } =
+  studentSlice.actions;
 export default studentSlice.reducer;

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { removeStudent } from "../studentSlice";
+import { removeStudent, increaseGrade, decreaseGrade } from "../studentSlice";
 
 export const StudentList = () => {
   const students = useSelector((state) => state.classroom.students);
@@ -7,6 +7,14 @@ export const StudentList = () => {
 
   const handleDeleteStudent = (id) => {
     dispatch(removeStudent(id));
+  };
+
+  const handleIncreaseGrade = (id) => {
+    dispatch(increaseGrade(id));
+  };
+
+  const handleDecreaseGrade = (id) => {
+    dispatch(decreaseGrade(id));
   };
 
   return (
@@ -18,7 +26,17 @@ export const StudentList = () => {
       {students.map((student) => (
         <div key={student.id} style={{ display: "flex", marginTop: "5px" }}>
           <div style={{ width: "200px" }}>{student.fullName}</div>
-          <div style={{ width: "50px" }}>{student.grade}</div>
+          <button onClick={() => handleDecreaseGrade(student.id)}>-</button>
+          <div
+            style={{
+              width: "50px",
+              textAlign: "center",
+              alignContent: "center",
+            }}
+          >
+            {student.grade}
+          </div>
+          <button onClick={() => handleIncreaseGrade(student.id)}>+</button>
           <button
             style={{ marginLeft: "35px" }}
             onClick={() => handleDeleteStudent(student.id)}
